@@ -96,7 +96,7 @@
   align-items: center;
   text-decoration: none;
   color: #ffffff;
-  background: #0f69ff;
+  background:linear-gradient(180deg, #cfcfcf, #4b4b4b);
   border: none;
   padding: 12px 18px;
   border-radius: 10px;
