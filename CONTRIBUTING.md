@@ -2,6 +2,15 @@
 
 Thank you for contributing to this React project.
 
+## Prerequisites
+
+Before running scripts, collaborators need:
+
+- Node.js installed locally (includes `npm`)
+- `npm install` run once in the repo root
+- GitHub write/collaborator access to the repository
+- A local shell such as PowerShell, Command Prompt, or Bash
+
 ## Setup
 
 1. Clone the repository:
@@ -34,7 +43,21 @@ Use feature branches for any new work:
 
 ## GitHub Permissions
 
-Collaborators need write access to the repository to push branches. If `git push` is refused, ask the repository owner to add you as a collaborator or review branch protection rules.
+Collaborators need write access to the repository to push branches. This is a GitHub setting, not a project script setting.
+
+### How to add a collaborator on GitHub
+
+1. Open the repository on GitHub.
+2. Click `Settings`.
+3. Choose `Manage access` from the left menu.
+4. Click `Invite a collaborator`.
+5. Enter the collaborator's GitHub username or email.
+6. Send the invitation.
+7. The collaborator must accept the invitation in their GitHub notifications.
+
+Once accepted, collaborators can push branches and run local scripts.
+
+If `git push` is refused, ask the repository owner to add you as a collaborator or review branch protection rules.
 
 ## Pull Requests
 
