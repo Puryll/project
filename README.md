@@ -2,6 +2,36 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Collaborating on GitHub
+
+To allow collaborators to use scripts and push branches:
+
+1. Make sure the repository owner adds you as a GitHub collaborator or gives you write access to the repo.
+2. Clone the repository locally:
+
+   `git clone <repo-url>`
+3. Install dependencies before running scripts:
+
+   `npm install`
+4. Create a feature branch for your work:
+
+   `git checkout -b feature/your-name-description`
+5. Run the development server:
+
+   `npm start`
+6. Run tests:
+
+   `npm test`
+7. Build the app for production:
+
+   `npm run build`
+8. Push your branch to GitHub:
+
+   `git push -u origin feature/your-name-description`
+9. Open a pull request against the default branch once your changes are ready.
+
+If push access is denied, the repo owner must grant collaborator access or update branch protection settings.
+
 ## Available Scripts
 
 In the project directory, you can run:
