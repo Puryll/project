@@ -2,6 +2,15 @@
 
 Thank you for contributing to this React project.
 
+## Prerequisites
+
+Before running scripts, collaborators need:
+
+- Node.js installed locally (includes `npm`)
+- `npm install` run once in the repo root
+- GitHub write/collaborator access to the repository
+- A local shell such as PowerShell, Command Prompt, or Bash
+
 ## Setup
 
 1. Clone the repository:
