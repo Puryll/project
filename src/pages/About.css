@@ -1,0 +1,129 @@
+.about-container {
+  background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.about-header {
+  background: rgba(107, 114, 128, 0.95);
+  color: white;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.about-header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  font-weight: bold;
+}
+
+.about-header p {
+  font-size: 1.1em;
+  margin: 10px 0 0 0;
+  opacity: 0.95;
+}
+
+.about-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px 30px;
+}
+
+.section {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 4px solid #9ca3af;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  color: #6b7280;
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.section p {
+  color: #555;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.work-days {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #efefef;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.day-item:last-child {
+  border-bottom: none;
+}
+
+.day-name {
+  font-weight: bold;
+  color: #6b7280;
+}
+
+.day-hours {
+  color: #333;
+}
+
+.stars {
+  font-size: 1.8em;
+  color: #ffc107;
+  letter-spacing: 3px;
+  margin: 10px 0;
+}
+
+.rating-text {
+  color: #555;
+  font-size: 0.95em;
+}
+
+.shipping-badge {
+  display: inline-block;
+  background: #27ae60;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.year-opened {
+  color: #555;
+  font-size: 1em;
+  line-height: 1.8;
+}
+
+.info-text {
+  color: #666;
+  line-height: 1.8;
+  font-size: 0.95em;
+}
