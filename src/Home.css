@@ -11,8 +11,9 @@
     justify-content: center;
     text-align: center;
     padding: auto;
-    background: linear-gradient(135deg, #cfcfcf, #4b4b4b);
+    background: linear-gradient(to top, #cfcfcf, #4b4b4b);
     min-height: 80vh;
+    height: 100vh;
 }
 
 .home h1 {
@@ -25,7 +26,7 @@
 .home p {
     font-size: 1.2rem;
     max-width: 600px;
-    color: #575e64;
+    color: #4b4b4b;
     line-height: 1.7;
 }
 
@@ -35,9 +36,194 @@
     font-size: 1.1rem;
     color: #fff;
     background: initial;
-    border: 6px solid #6d6d6d;
+    border: 10px solid #6d6d6d;
+    background: #6d6d6d;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.25s ease;
+    transition: background-color 0.5s ease;
+    text-decoration: none;
 }
 
+.home-button:hover {
+    background-color: #4b4b4b;
+    transition: background-color 0.5s ease;
+}
+
+.homesection,
+.feutures {
+    position: relative;
+    overflow: hidden;
+}
+
+.home-gear,
+.feature-gear {
+    position: absolute;
+    width: 16rem;
+    height: 16rem;
+    color: rgba(0, 0, 0, 0.18);
+    text-shadow: 0 0 24px rgba(0,0,0,0.12);
+    animation: gear-rotate 12s linear infinite;
+    pointer-events: none;
+    user-select: none;
+}
+
+.home-gear svg,
+.feature-gear svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: rgba(31, 31, 31, 0.16);
+    stroke: rgba(0, 0, 0, 0.45);
+    stroke-width: 1.5;
+}
+
+.home-gear.gear-quarter,
+.feature-gear.feature-top-left,
+.feature-gear.feature-top-right {
+    opacity: 1;
+}
+
+.home-gear.gear-half {
+    opacity: 1;
+}
+
+.gear-top-left {
+    top: -8rem;
+    left: -8rem;
+    animation-duration: 12s;
+}
+
+.gear-top-right {
+    top: -8rem;
+    right: -8rem;
+    animation-duration: 12s;
+    animation-direction: reverse;
+}
+
+.gear-bottom-left {
+    bottom: -8rem;
+    left: -8rem;
+    animation-duration: 12s;
+}
+
+.gear-bottom-right {
+    bottom: -8rem;
+    right: -8rem;
+    animation-duration: 12s;
+    animation-direction: reverse;
+}
+
+.feature-gear.feature-top-left {
+    top: -8rem;
+    left: -8rem;
+    animation-duration: 12s;
+}
+
+.feature-gear.feature-top-right {
+    top: -8rem;
+    right: -8rem;
+    animation-duration: 12s;
+    animation-direction: reverse;
+}
+
+@keyframes gear-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.homeproducts {
+    padding: 60px 20px;
+}
+
+.homeproducts-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 40px;
+}
+
+.homeproducts-header h2 {
+    font-size: 2rem;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+}
+
+.homeproducts-header p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.homeproducts-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 30vw;
+  height: 35vh;
+  perspective: 1000px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(29, 29, 29);
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, rgb(160, 160, 160) 60%, rgb(173, 173, 173) 88%,
+     rgb(46, 46, 46) 40%, rgba(173, 173, 173, 0.603) 48%);
+  color: rgb(43, 43, 43);
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(46, 46, 46) 30%, rgb(173, 173, 173) 88%,
+     rgb(160, 160, 160) 40%, rgb(173, 173, 173) 78%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.feutures {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  padding: 0 20px;
+  height: 75vh;
+  min-height: 50vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #cfcfcf, #868686);
+  border-radius: 0 0 70px 70px;
+}
