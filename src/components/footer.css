@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+footer {
+    height: 30vh;
+    background: linear-gradient(to bottom, #ffffff, #444444);
+}
+
+.footer {
+    display:flex;
+    justify-content:space-around;
+    align-content:center;
+    flex-direction:row;
+    gap:1.5rem;
+}
+
+.FooterUl {
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+    gap:1rem;
+    margin-left:4rem;
+    height:100%;
+}
+
+.FooterUl a {
+    border: 15px solid rgb(70, 70, 70);
+    background-color: rgb(70, 70, 70);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    display:inline;
+    transition: all 0.5s ease;
+}
+
+.a1 {
+    animation: -MadeFrom 6s ease-in-out infinite alternate;
+}
+
+.a2 {
+    animation: -MadeFrom 6s ease-in-out infinite alternate;
+    animation-delay:0.5s;
+}
+
+.a1:hover {
+    color: rgb(70, 70, 70);
+    background-color: white;
+    border:15px solid white;
+    transition: all 0.5s ease;
+}
+
+.a2:hover {
+    color: rgb(70, 70, 70);
+    background-color: white;
+    border:15px solid white;
+    transition: all 0.5s ease;
+}
+
+.copy {
+    display:flex;
+    color: rgb(219, 219, 219);
+    justify-content:center;
+    align-items:center;
+    margin-top:3rem;
+    font-size:1rem;
+}
+
+.MadeFrom {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.MadeFrom p {
+    animation: MadeFrom 6s ease-in-out infinite alternate;
+    font-size:1.5rem;
+    font-weight:900;
+}
+
+.MadeFrom h2 {
+    animation: MadeFrom 6s ease-in-out infinite alternate;
+    animation-delay:0.5s;
+}
+
+.MadeFrom h3 {
+    animation: MadeFrom 6s ease-in-out infinite alternate;
+    animation-delay:1s;
+}
+
+.MadeFrom h4 {
+    animation: MadeFrom 6s ease-in-out infinite alternate;
+    animation-delay:1.5s;
+}
+
+@keyframes MadeFrom {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes -MadeFrom {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}

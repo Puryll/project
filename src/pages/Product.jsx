@@ -1,11 +1,13 @@
 import ProductComponent from "../components/Product";
 import Navbar from "../components/Navbar";
 import products from "../Product";
+import Footer from "../components/footer.jsx"
 
 function ProductPage() {
   return (
     <>
       <Navbar />
+      <div className="products">
       <main className="product-page">
         <section className="product-header">
           <h1>Produktet tona</h1>
@@ -24,6 +26,8 @@ function ProductPage() {
           ))}
         </section>
       </main>
+      </div>
+      <Footer/>
     </>
   );
 }

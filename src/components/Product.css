@@ -4,6 +4,10 @@
   box-sizing:border-box;
 }
 
+.products {
+    background:linear-gradient(to top,#ffffff, #4b4b4b);
+}
+
 .product-page {
   padding: 30px 18px 50px;
   max-width: 1280px;
@@ -18,13 +22,13 @@
 .product-header h1 {
   font-size: clamp(2rem, 2.5vw, 3rem);
   margin: 0;
-  color: #0f2137;
+  color: #dadada;
 }
 
 .product-header p {
   margin: 12px auto 0;
   max-width: 720px;
-  color: #5f6777;
+  color: #b4b4b4;
   line-height: 1.7;
 }
 

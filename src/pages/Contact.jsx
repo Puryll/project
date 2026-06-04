@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import "../Contact.css";
+import Footer from "../components/footer.jsx"
 
 function Contact() {
     const [submitted, setSubmitted] = useState(false);
@@ -35,10 +36,8 @@ function Contact() {
                 </p>
             </section>
 
-            {/* Info + Form */}
             <div className="contact-main">
 
-                {/* Info Card */}
                 <div className="contact-info">
                     <h2>Informacioni i Kontaktit</h2>
 
@@ -200,6 +199,7 @@ function Contact() {
                     referrerPolicy="no-referrer-when-downgrade"
                 />
             </div>
+            <Footer/>
         </div>
     );
 }
