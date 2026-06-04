@@ -58,8 +58,8 @@
 .home-gear,
 .feature-gear {
     position: absolute;
-    width: 16rem;
-    height: 16rem;
+    width: 32rem;
+    height: 32rem;
     color: rgba(0, 0, 0, 0.18);
     text-shadow: 0 0 24px rgba(0,0,0,0.12);
     animation: gear-rotate 12s linear infinite;
@@ -88,40 +88,40 @@
 }
 
 .gear-top-left {
-    top: -8rem;
-    left: -8rem;
+    top: -16rem;
+    left: -16rem;
     animation-duration: 12s;
 }
 
 .gear-top-right {
-    top: -8rem;
-    right: -8rem;
+    top: -16rem;
+    right: -16rem;
     animation-duration: 12s;
     animation-direction: reverse;
 }
 
 .gear-bottom-left {
-    bottom: -8rem;
-    left: -8rem;
+    bottom: -16rem;
+    left: -16rem;
     animation-duration: 12s;
 }
 
 .gear-bottom-right {
-    bottom: -8rem;
-    right: -8rem;
+    bottom: -16rem;
+    right: -16rem;
     animation-duration: 12s;
     animation-direction: reverse;
 }
 
 .feature-gear.feature-top-left {
-    top: -8rem;
-    left: -8rem;
+    top: -16rem;
+    left: -16rem;
     animation-duration: 12s;
 }
 
 .feature-gear.feature-top-right {
-    top: -8rem;
-    right: -8rem;
+    top: -16rem;
+    right: -16rem;
     animation-duration: 12s;
     animation-direction: reverse;
 }
@@ -220,7 +220,7 @@
   flex-direction: row;
   gap: 5rem;
   padding: 0 20px;
-  height: 75vh;
+  height: 80vh;
   min-height: 50vh;
   justify-content: center;
   align-items: center;
