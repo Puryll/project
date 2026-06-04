@@ -3,6 +3,7 @@ import "../Home.css";
 import { Link } from "react-router-dom";
 import Product from "../components/Product.jsx";
 import products from "../Product";
+import Footer from "../components/footer.jsx"
 
 function Home() {
     const newestProducts = products.slice(-4).reverse();
@@ -121,6 +122,7 @@ function Home() {
             ))}
           </div>
         </section>
+        <Footer/>
         </>
     )
 };

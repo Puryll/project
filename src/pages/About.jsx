@@ -1,9 +1,12 @@
 import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/footer.jsx"
 import "./About.css";
 
 function About() {
     return (
         <>
+        <Navbar />
+        <Footer/>
             <Navbar />
             <div className="about-container">
                 <div className="about-content">
