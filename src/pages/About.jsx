@@ -5,8 +5,6 @@ import "./About.css";
 function About() {
     return (
         <>
-        <Navbar />
-        <Footer/>
             <Navbar />
             <div className="about-container">
                 <div className="about-content">
@@ -87,6 +85,7 @@ function About() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     )
 };

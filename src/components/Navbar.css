@@ -80,3 +80,33 @@
     color: #333;
     margin: 0;
 }
+
+.li1 {
+    animation: MadeFrom 6s ease-in-out infinite alternate;
+    font-size:1.5rem;
+    font-weight:900;
+}
+
+.li2 {
+    animation: MadeFrom 6s ease-in-out infinite alternate;
+    animation-delay:0.5s;
+}
+
+.li3 {
+    animation: MadeFrom 6s ease-in-out infinite alternate;
+    animation-delay:1s;
+}
+
+.li4 {
+    animation: MadeFrom 6s ease-in-out infinite alternate;
+    animation-delay:1.5s;
+}
+
+@keyframes MadeFrom {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}

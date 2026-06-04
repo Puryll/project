@@ -15,6 +15,7 @@ footer {
     align-content:center;
     flex-direction:row;
     gap:1.5rem;
+    margin-top: 2rem;
 }
 
 .FooterUl {

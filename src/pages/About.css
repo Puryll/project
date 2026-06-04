@@ -1,5 +1,5 @@
 .about-container {
-  background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+  background:linear-gradient(to top, #ffffff, #4b4b4b);
   min-height: 100vh;
   padding: 40px 20px;
   font-family: 'Arial', sans-serif;
@@ -15,7 +15,7 @@
 }
 
 .about-header {
-  background: rgba(107, 114, 128, 0.95);
+  background: rgba(124, 128, 136, 0.95);
   color: white;
   padding: 40px 30px;
   text-align: center;

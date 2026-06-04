@@ -9,10 +9,10 @@ function Navbar() {
     <div className="navbar-container">
       <nav className="navbar">
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/Product">Product</Link></li>
-        <li><Link to="/About">About</Link></li>
-        <li><Link to="/Contact">Contact</Link></li>
+        <li className="li1"><Link to="/">Home</Link></li>
+        <li className="li2"><Link to="/Product">Product</Link></li>
+        <li className="li3"><Link to="/About">About</Link></li>
+        <li className="li4"><Link to="/Contact">Contact</Link></li>
       </ul>
 
         {/*<Link to="/LoginPage"><button className="login-button">Login</button></Link>*/}
