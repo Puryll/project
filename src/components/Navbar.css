@@ -32,7 +32,7 @@
 
 .nav-links a:hover{
   text-decoration:underline;
-  color :#6e6e6e;
+  color :#000000;
   transition:all 0.3s ease;
 }
 
