@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import products from "../Product";
+import Footer from "../components/footer.jsx"
 
 function ViewProduct() {
     const { id } = useParams();
@@ -26,6 +27,7 @@ function ViewProduct() {
     return (
         <>
             <Navbar />
+            <div className="viewProduct">
             <main className="product-page">
                 <section className="product-header">
                     <h1>{product.name}</h1>
@@ -49,6 +51,8 @@ function ViewProduct() {
                     </div>
                 </section>
             </main>
+            </div>
+            <Footer/>
         </>
     );
 }
