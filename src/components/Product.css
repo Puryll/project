@@ -8,6 +8,10 @@
     background:linear-gradient(to top,#ffffff, #4b4b4b);
 }
 
+.viewProduct {
+    background:linear-gradient(to top,#ffffff, #4b4b4b);
+}
+
 .product-page {
   padding: 30px 18px 50px;
   max-width: 1280px;
@@ -40,7 +44,7 @@
 }
 
 .product {
-  background: #ffffff;
+  background: #e0e0e0;
   border: 1px solid rgba(15, 33, 55, 0.08);
   border-radius: 18px;
   box-shadow: 0 18px 40px rgba(15, 33, 55, 0.08);
@@ -83,18 +87,17 @@
 .product-content h2 {
   font-size: 1.15rem;
   margin: 0;
-  color: #102a43;
+  color: #000000;
 }
 
 .product-content p {
   margin: 0;
-  color: #52606d;
+  color: #777777;
   line-height: 1.7;
   font-size: 0.96rem;
 }
 
 .price {
-  color: #0f69ff;
   font-weight: 700;
   font-size: 1rem;
   margin: 0;
@@ -105,8 +108,8 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: #ffffff;
-  background:linear-gradient(180deg, #cfcfcf, #4b4b4b);
+  color: #000000;
+  background-color:#ffffff;
   border: none;
   padding: 12px 18px;
   border-radius: 10px;
@@ -116,7 +119,7 @@
 }
 
 .buttoni:hover {
-  background-color: #0844c2;
+  background-color: #414141;
   transform: translateY(-1px);
 }
 
@@ -134,7 +137,7 @@
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 32px;
-  background: #ffffff;
+  background: #9c9c9c;
   border: 1px solid rgba(15, 33, 55, 0.08);
   border-radius: 22px;
   padding: 28px;
@@ -168,7 +171,7 @@
 
 .viewproduct-details .badge {
   align-self: flex-start;
-  background: linear-gradient(90deg, #0f69ff 0%, #72d4ff 100%);
+  background: linear-gradient(90deg, #4b4b4b 0%, #777777 100%);
   color: #ffffff;
   padding: 8px 14px;
   border-radius: 999px;
@@ -178,14 +181,14 @@
 
 .viewproduct-details h2 {
   margin: 0;
-  color: #102a43;
+  color: #000000;
   font-size: 2rem;
   line-height: 1.1;
 }
 
 .viewproduct-details p {
   margin: 0;
-  color: #52606d;
+  color: #3d3d3d;
   line-height: 1.8;
   font-size: 1rem;
 }
@@ -201,7 +204,7 @@
 .viewproduct-footer .price {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #0f69ff;
+  color: #1b1b1b;
   margin: 0;
 }
 
