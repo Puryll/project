@@ -59,11 +59,11 @@ function Home() {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <p className="title">Performancë e Lartë</p>
-                <p>Hekurari funksionon shpejt dhe efikas.</p>
+                <p className="description">Hekurari funksionon shpejt dhe efikas.</p>
               </div>
               <div className="flip-card-back">
                 <p className="title">Përfitimi</p>
-                <p>Rezultate të shkëlqyera në çdo rroba dhe nganjëherë më pak kohë në hekurosje.</p>
+                <p className="description">Rezultate të shkëlqyera në çdo rroba dhe nganjëherë më pak kohë në hekurosje.</p>
               </div>
             </div>
           </div>
@@ -71,11 +71,11 @@ function Home() {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <p className="title">Siguri e Garantuar</p>
-                <p>Materiale të qëndrueshme dhe mbrojtje termike.</p>
+                <p className="description">Materiale të qëndrueshme dhe mbrojtje termike.</p>
               </div>
               <div className="flip-card-back">
                 <p className="title">Përfitimi</p>
-                <p>Shkarkim i ulët i energjisë dhe më shumë qetësi gjatë përdorimit.</p>
+                <p className="description">Shkarkim i ulët i energjisë dhe më shumë qetësi gjatë përdorimit.</p>
               </div>
             </div>
           </div>
@@ -83,11 +83,11 @@ function Home() {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <p className="title">Kursim Energjie</p>
-                <p>Funksionon me konsum të ulët të energjisë.</p>
+                <p className="description">Funksionon me konsum të ulët të energjisë.</p>
               </div>
               <div className="flip-card-back">
                 <p className="title">Përfitimi</p>
-                <p>Shpenzime më të ulëta mujore dhe përdorim më efikas i burimeve.</p>
+                <p className="description">Shpenzime më të ulëta mujore dhe përdorim më efikas i burimeve.</p>
               </div>
             </div>
           </div>
@@ -95,11 +95,11 @@ function Home() {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <p className="title">Shërbim Teknik i Shpejtë</p>
-                <p>Mbështetje e shpejtë pas blerjes.</p>
+                <p className="description">Mbështetje e shpejtë pas blerjes.</p>
               </div>
               <div className="flip-card-back">
                 <p className="title">Përfitimi</p>
-                <p>Nëse keni ndonjë problem, ne ofrojmë riparim të shpejtë dhe pjesë këmbimi.</p>
+                <p className="description">Nëse keni ndonjë problem, ne ofrojmë riparim të shpejtë dhe pjesë këmbimi.</p>
               </div>
             </div>
           </div>
