@@ -1,0 +1,133 @@
+.login-page {
+  background: linear-gradient(180deg, #efefef 0%, #ffffff 100%);
+  min-height: calc(100vh - 120px);
+  padding: 40px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-panel {
+  width: 100%;
+  max-width: 520px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f6f6 100%);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.login-panel h2 {
+  margin: 0 0 6px 0;
+  color: #111;
+  font-size: 1.6rem;
+}
+
+.muted { 
+  color: #666; 
+}
+
+.small { 
+  font-size: 0.9rem; 
+}
+
+.login-form label { 
+  display: block; 
+  margin-bottom: 12px; 
+  color: #222; 
+}
+.login-form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 8px;
+  border: 1px solid #e0e3e6;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.btn {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg,#4f4f4f,#2f2f2f);
+  color: #fff;
+  cursor: pointer;
+  font-weight:700;
+}
+
+.btn:hover{ transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.12) }
+
+.reviews {
+  padding: 10px;
+  background: linear-gradient(180deg, #fbfbfb 0%, #f3f3f3 100%);
+  border-radius: 8px;
+}
+
+.reviews h3 {
+   margin-top: 0;
+}
+
+.comment-form {
+   display: flex;
+   gap: 8px;
+   margin: 12px 0 16px 0;
+}
+
+.comment-form input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+}
+
+.comment-list { 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.comment-item {
+   background: #fff;
+   padding: 10px;
+   border-radius: 6px;
+   border: 1px solid #e6e6e6; 
+}
+
+.comment-item strong {
+  display: block;
+  color: #222;
+  margin-bottom: 4px; 
+}
+
+
+@media (max-width: 900px) {
+  .login-panel { max-width: 520px }
+}
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: 24px 12px;
+}
+
+  .login-panel {
+  padding: 20px;
+  gap: 18px;
+}
+
+  .login-form label { 
+    margin-bottom: 10px; 
+  }
+
+  .login-form input {
+   padding: 12px 14px;
+}
+
+  .btn { 
+    width: 100%; 
+}
+}

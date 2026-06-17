@@ -1,12 +1,69 @@
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar.jsx";
 import "../Home.css";
 import { Link } from "react-router-dom";
 import Product from "../components/Product.jsx";
-import products from "../Product";
-import Footer from "../components/footer.jsx"
+import secretData from "../secretData";
+import Footer from "../components/footer.jsx";
+import CommentForm from "../components/CommentForm.jsx";
+import CommentList from "../components/CommentList.jsx";
+import { db } from "../firebase";
+import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "firebase/firestore";
 
 function Home() {
+    const [products, setProducts] = useState(secretData.getProducts());
+
+    useEffect(() => {
+      const unsub = secretData.subscribe((p) => setProducts([...p]));
+      return () => unsub();
+    }, []);
+
     const newestProducts = products.slice(-4).reverse();
+    const [comments, setComments] = useState([]);
+    const [newComment, setNewComment] = useState("");
+    const [commentName, setCommentName] = useState("");
+    const [rating, setRating] = useState(5);
+    const [hoverRating, setHoverRating] = useState(null);
+
+    const renderStars = (value) => {
+      const v = Number(value) || 0;
+      const full = Math.floor(v);
+      const hasHalf = v - full >= 0.5;
+      const filled = '★'.repeat(full);
+      const half = hasHalf ? '⯨' : '';
+      const empty = '☆'.repeat(5 - full - (hasHalf ? 1 : 0));
+      return `${filled}${half}${empty}`;
+    };
+
+    const formatDate = (ts) => {
+      if (!ts) return '';
+      let d;
+      if (ts.toDate) d = ts.toDate();
+      else if (ts.seconds) d = new Date(ts.seconds * 1000);
+      else d = new Date(ts);
+      return d.toLocaleDateString();
+    };
+
+    function addComment(e) {
+      e.preventDefault();
+      if (!newComment.trim()) return;
+      addDoc(collection(db, "comments"), {
+        name: commentName.trim() || "Anon",
+        text: newComment.trim(),
+        rating,
+        createdAt: serverTimestamp(),
+      });
+      setCommentName("");
+      setNewComment("");
+      setRating(5);
+    }
+
+    useEffect(() => {
+      const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
+      return onSnapshot(q, (snapshot) => {
+        setComments(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      });
+    }, []);
 
     return(
         <>
@@ -37,9 +94,10 @@ function Home() {
             </svg>
           </div>
           <div className="home">
-            <h1>Përshëndetje dhe Mirësevini</h1>
-            <p>Ne jemi të përkushtuar të ofrojmë produkte të cilësisë së lartë dhe shërbim të shkëlqyer për klientët tanë. Eksploroni koleksionin tonë të gjerë dhe gjeni atë që ju nevojitet.</p>
-            <Link to="/Product" className="home-button">Shiko Produktet</Link>
+            <h1>Përshëndetje dhe Mirësevini në Dyqanin Tonë</h1>
+            <p>Ne sjellim produkte të përzgjedhura me kujdes, me dizajne moderne dhe funksionalitet të qëndrueshëm. Çdo produkt është testuar për t'ju ofruar një përvojë të besueshme.</p>
+            <Link to="/Product" className="home-button">Shiko Koleksionin</Link>
+            <p className="home-small">Zbuloni produktet më të reja dhe ofertat ekskluzive, të përshtatura për çdo nevojë të jetesës.</p>
           </div>
         </section>
         <section className="feutures">
@@ -106,8 +164,8 @@ function Home() {
         </section>
         <section className="homeproducts">
           <div className="homeproducts-header">
-            <h2>Produktet më të reja në ofertë</h2>
-            <p>Këtu janë 4 produktet më të reja nga koleksioni ynë, të gjitha me çmime promocionale.</p>
+            <h2>Koleksioni më i fundit</h2>
+            <p>Shfletoni 4 produktet më të reja me karakteristika inovative dhe më shumë vlerë për çdo blerje.</p>
           </div>
           <div className="homeproducts-list">
             {newestProducts.map((product) => (
@@ -118,8 +176,30 @@ function Home() {
                 description={product.description}
                 img={product.img}
                 saleprice={product.saleprice}
+                stock={product.stock}
               />
             ))}
+          </div>
+        </section>
+        <section className="home-comments">
+          <div className="homeproducts-header">
+            <h2>Komente të reja të përdoruesve</h2>
+            <p className="muted">Shtoni komentin tuaj ose lexoni komentet më të fundit nga komuniteti ynë.</p>
+          </div>
+          <div className="comment-section">
+            <CommentForm
+              commentName={commentName}
+              setCommentName={setCommentName}
+              newComment={newComment}
+              setNewComment={setNewComment}
+              rating={rating}
+              setRating={setRating}
+              hoverRating={hoverRating}
+              setHoverRating={setHoverRating}
+              renderStars={renderStars}
+              onSubmit={addComment}
+            />
+            <CommentList comments={comments} renderStars={renderStars} formatDate={formatDate} />
           </div>
         </section>
         <Footer/>
@@ -127,4 +207,4 @@ function Home() {
     )
 };
 
-export default Home;
+export default Home

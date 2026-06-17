@@ -6,6 +6,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Product from './pages/Product';
 import ViewProduct from './pages/ViewProduct';
+import Login from './pages/Login.jsx';
+import Secret from './pages/Secret';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/product" element={<Product />} />
       <Route path="/productdetails/:id" element={<ViewProduct />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/secret" element={<Secret />} />
     </Routes>
     </>
   );

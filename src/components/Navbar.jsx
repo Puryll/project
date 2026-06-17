@@ -13,6 +13,7 @@ function Navbar() {
         <li className="li2"><Link to="/Product">Product</Link></li>
         <li className="li3"><Link to="/About">About</Link></li>
         <li className="li4"><Link to="/Contact">Contact</Link></li>
+        <li className="li5"><Link to ="/Login">Login</Link></li>
       </ul>
 
         {/*<Link to="/LoginPage"><button className="login-button">Login</button></Link>*/}
