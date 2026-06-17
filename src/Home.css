@@ -251,7 +251,7 @@
 }
 
 .star-display{ 
-    font-size:1.3rem; 
+    font-size:2.2rem; 
     color:#f59e0b; 
     line-height:36px 
 }
@@ -388,7 +388,7 @@
 
 .flip-card {
   background-color: transparent;
-  width: 30vw;
+  width: 20vw;
   height: 35vh;
   perspective: 1000px;
   font-family: sans-serif;
@@ -466,15 +466,15 @@
 }
 
 .home h1 {
-    font-size: 2.1rem;
+    font-size: 2rem;
     margin-bottom: 18px;
     color: #242525;
     letter-spacing: 0.9px;
 }
 
 .home p {
-    font-size: 1rem;
-    max-width: 100%;
+    font-size: 0.9rem;
+    max-width: 90%;
     color: #4b4b4b;
     line-height: 1.7;
 }
@@ -505,8 +505,8 @@
 
 .home-gear,
 .feature-gear {
-    width: 18rem;
-    height: 18rem;
+    width: 20rem;
+    height: 20rem;
 }
 
 .homeproducts {
@@ -532,7 +532,7 @@
 }
 
 .flip-card {
-    width: 100%;
+    width: 80%;
     height: auto;
     min-height: 260px;
 }
