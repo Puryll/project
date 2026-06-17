@@ -1,5 +1,5 @@
 .about-container {
-  background: linear-gradient(135deg, #535353 0%, #adadad 100%);
+  background: #969696;
   min-height: 100vh;
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
@@ -27,7 +27,7 @@
 }
 
 .about-header {
-  background: linear-gradient(135deg, #949494 0%, #9c9c9c 100%);
+  background: #494949;
   color: white;
   padding: 60px 30px;
   text-align: center;
@@ -59,7 +59,7 @@
   background: white;
   padding: 30px;
   border-radius: 15px;
-  border-left: 5px solid #7e7e7e;
+  border-left: 5px solid #616161;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -71,7 +71,7 @@
 }
 
 .section h2 {
-  color: #979797;
+  color: #7c7c7c;
   font-size: 1.6em;
   margin-top: 0;
   margin-bottom: 18px;

@@ -5,11 +5,11 @@
 }
 
 .products {
-    background:linear-gradient(to top,#a3a3a3, #4b4b4b);
+    background: #969696;
 }
 
 .viewProduct {
-    background:linear-gradient(to top,#ffffff, #4b4b4b);
+    background:#969696;
 }
 
 .product-page {
@@ -159,7 +159,7 @@
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 32px;
-  background: #9c9c9c;
+  background: #707070;
   border: 1px solid rgba(15, 33, 55, 0.08);
   border-radius: 22px;
   padding: 28px;
