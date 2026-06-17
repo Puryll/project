@@ -5,6 +5,7 @@ import Footer from "../components/footer.jsx"
 
 function Contact() {
     const [submitted, setSubmitted] = useState(false);
+    const WHATSAPP_NUMBER = "+383049641102"; // Without spaces and special characters
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -18,8 +19,18 @@ function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        // Create WhatsApp message
+        const whatsappMessage = `*Kontakt nga Faqja e Përdoruesit*%0A%0A*Emri:* ${encodeURIComponent(form.name)}%0A*Email:* ${encodeURIComponent(form.email)}%0A*Subjekti:* ${encodeURIComponent(form.subject || "Pa subjekt")}%0A*Mesazhi:* ${encodeURIComponent(form.message)}`;
+        
+        // Open WhatsApp
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`, '_blank');
+        
         setSubmitted(true);
-        setForm({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => {
+            setForm({ name: "", email: "", subject: "", message: "" });
+            setSubmitted(false);
+        }, 3000);
     };
 
     return (
@@ -78,6 +89,14 @@ function Contact() {
                     <div className="social-section">
                         <h3>Rrjetet Sociale</h3>
                         <div className="social-links">
+                            <a
+                                href="https://wa.me/383049641102?text=Përshëndetje!%20Unë%20do%20të%20doja%20të%20kontaktoja%20me%20ju."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-btn whatsapp"
+                            >
+                                <span>💬</span> WhatsApp
+                            </a>
                             <a
                                 href="https://facebook.com"
                                 target="_blank"
@@ -175,12 +194,12 @@ function Contact() {
                         </div>
 
                         <button type="submit" className="submit-btn">
-                            Dërgoni Mesazhin →
+                            📱 Dërgoni përmes WhatsApp →
                         </button>
 
                         {submitted && (
                             <div className="form-success">
-                                ✅ Mesazhi u dërgua me sukses! Do t'ju kontaktojmë së shpejti.
+                                ✅ Jeni drejtuar në WhatsApp! Ju pritet përgjigja aty.
                             </div>
                         )}
                     </form>

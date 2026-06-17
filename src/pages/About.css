@@ -1,70 +1,88 @@
 .about-container {
-  background:linear-gradient(to top, #ffffff, #4b4b4b);
+  background: linear-gradient(135deg, #535353 0%, #adadad 100%);
   min-height: 100vh;
   padding: 40px 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .about-content {
   max-width: 1200px;
   margin: 0 auto;
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .about-header {
-  background: rgba(105, 105, 105, 0.95);
+  background: linear-gradient(135deg, #949494 0%, #9c9c9c 100%);
   color: white;
-  padding: 40px 30px;
+  padding: 60px 30px;
   text-align: center;
 }
 
 .about-header h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   margin: 0;
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .about-header p {
-  font-size: 1.1em;
-  margin: 10px 0 0 0;
+  font-size: 1.2em;
+  margin: 15px 0 0 0;
   opacity: 0.95;
+  font-weight: 300;
 }
 
 .about-sections {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 40px 30px;
-  background: #f7f7f7;
+  gap: 25px;
+  padding: 50px 30px;
+  background: #fafbfc;
 }
 
 .section {
-  background: #d3d3d3;
-  padding: 25px;
-  border-radius: 10px;
-  border-left: 8px solid #6e6e6e;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 5px solid #7e7e7e;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+  border-left-color: #363636;
 }
 
 .section h2 {
-  color: #6b7280;
-  font-size: 1.5em;
+  color: #979797;
+  font-size: 1.6em;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  font-weight: 700;
 }
 
 .section p {
-  color: #555;
-  line-height: 1.6;
-  margin: 5px 0;
+  color: #666;
+  line-height: 1.7;
+  margin: 8px 0;
+  font-size: 0.95em;
 }
 
 .work-days {
@@ -76,9 +94,9 @@
 .day-item {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #efefef;
-  color: #000000;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  color: #424242;
   font-size: 0.95em;
 }
 
@@ -87,24 +105,28 @@
 }
 
 .day-name {
-  font-weight: bold;
-  color: #6b7280;
+  font-weight: 600;
+  color: #b8b8b8;
 }
 
 .day-hours {
-  color: #333;
+  color: #555;
+  font-weight: 500;
 }
 
 .stars {
-  font-size: 1.8em;
-  color: #ffc107;
-  letter-spacing: 3px;
-  margin: 10px 0;
+  font-size: 2.2em;
+  color: #fbbf24;
+  letter-spacing: 4px;
+  margin: 15px 0;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
 }
 
 .rating-text {
-  color: #555;
+  color: #666;
   font-size: 0.95em;
+  margin-top: 10px;
 }
 
 .shipping-badge {
@@ -129,135 +151,20 @@
   font-size: 0.95em;
 }
 
-@media (max-width: 320px) {
-.about-container {
-  background:linear-gradient(to top, #ffffff, #4b4b4b);
-  min-height: 100vh;
-  padding: 40px 20px;
-  font-family: 'Arial', sans-serif;
-}
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2.2em;
+  }
 
-.about-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
+  .about-header p {
+    font-size: 1em;
+  }
 
-.about-header {
-  background: rgba(105, 105, 105, 0.95);
-  color: white;
-  padding: 40px 30px;
-  text-align: center;
-}
+  .about-sections {
+    padding: 30px 20px;
+  }
 
-.about-header h1 {
-  font-size: 2.3em;
-  margin: 0;
-  font-weight: bold;
-}
-
-.about-header p {
-  font-size: 1em;
-  margin: 10px 0 0 0;
-  opacity: 0.95;
-}
-
-.about-sections {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 10px;
-  padding: 40px 0px;
-  background: #f7f7f7;
-}
-
-.section {
-  background: #d3d3d3;
-  padding: 25px;
-  border-radius: 10px;
-  border-left: 8px solid #6e6e6e;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.section h2 {
-  color: #6b7280;
-  font-size: 1.3em;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.section p {
-  color: #555;
-  line-height: 1.6;
-  margin: 5px 0;
-}
-
-.work-days {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.day-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #efefef;
-  color: #000000;
-  font-size: 0.9em;
-}
-
-.day-item:last-child {
-  border-bottom: none;
-}
-
-.day-name {
-  font-weight: bold;
-  color: #6b7280;
-}
-
-.day-hours {
-  color: #333;
-}
-
-.stars {
-  font-size: 1.6em;
-  color: #ffc107;
-  letter-spacing: 3px;
-  margin: 10px 0;
-}
-
-.rating-text {
-  color: #555;
-  font-size: 0.95em;
-}
-
-.shipping-badge {
-  display: inline-block;
-  background: #27ae60;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.year-opened {
-  color: #555;
-  font-size: 0.8em;
-  line-height: 1.8;
-}
-
-.info-text {
-  color: #666;
-  line-height: 1.8;
-  font-size: 0.95em;
-}
+  .section {
+    padding: 20px;
+  }
 }
