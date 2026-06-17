@@ -102,6 +102,11 @@
     animation-delay:1.5s;
 }
 
+.li5 {
+    animation: MadeFrom 6s ease-in-out infinite alternate;
+    animation-delay:2s;
+}
+
 @keyframes MadeFrom {
     from {
         transform: translateY(0px);

@@ -8,7 +8,7 @@ function Footer () {
             <div className="footer">
                 <ul className="FooterUl">
                     <a href="https://www.facebook.com/driloniad" className="a1">facebook</a>
-                    <a href="instagram.com" className="a2">isntagram</a>
+                    <a href="instagram.com" className="a2">instagram</a>
                 </ul>
                 <div className="MadeFrom">
                     <p>U krijua nga</p>

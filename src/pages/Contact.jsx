@@ -26,7 +26,6 @@ function Contact() {
         <div className="contact-page">
             <Navbar />
 
-            {/* Hero */}
             <section className="contact-hero">
                 <h1>Na Kontaktoni</h1>
                 <p>
