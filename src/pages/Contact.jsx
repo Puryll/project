@@ -76,15 +76,6 @@ function Contact() {
                         </div>
                     </div>
 
-                    <div className="info-item">
-                        <span className="info-icon">🕐</span>
-                        <div>
-                            <h4>Orari i Punës</h4>
-                            <p>E Hënë – E Shtune: 09:00 – 18:00<br /></p>
-                            <p>E Diel: 09:00 – 16:00</p>
-                        </div>
-                    </div>
-
                     {/* Social Media */}
                     <div className="social-section">
                         <h3>Rrjetet Sociale</h3>

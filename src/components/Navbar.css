@@ -7,14 +7,15 @@
 .nav-links{
   list-style:none;
   display:flex;
-  gap:20px;
+  gap:8rem;
   background:inherit;
+  margin-right:10rem;
 }
 
 .nav-links li{
   text-decoration:none;
   font-weight:500;
-  font-size:1.1rem;
+  font-size:1.2rem;
   transition:color 0.25s ease, transform 0.25s ease;
 }
 
@@ -40,7 +41,7 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:linear-gradient(to bottom, #cfcfcf, #4b4b4b);
+    background: #969696;
     margin: 0;
 }
 
@@ -153,7 +154,7 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:linear-gradient(to bottom, #cfcfcf, #4b4b4b);
+    background:#969696;
     margin: 0;
 }
 

@@ -7,6 +7,10 @@ import logo from '../assets/logo.png';
 function Navbar() {
   return (
     <div className="navbar-container">
+      <div className="logo-container">
+      <img className="logo" src={logo} alt="Logo" />
+      <h1>Hekuraria Driloni AD </h1>
+      </div>
       <nav className="navbar">
       <ul className="nav-links">
         <li className="li1"><Link to="/">Home</Link></li>
@@ -18,10 +22,6 @@ function Navbar() {
         {/*<Link to="/LoginPage"><button className="login-button">Login</button></Link>*/}
           
       </nav>
-      <div className="logo-container">
-      <h1>Hekuraria Driloni AD </h1>
-      <img className="logo" src={logo} alt="Logo" />
-      </div>
     </div>
   );
 }
