@@ -35,14 +35,6 @@ function Home() {
       return `${filled}${half}${empty}`;
     };
 
-    const starLabel = (val) => {
-      const v = Number(val);
-      const full = Math.floor(v);
-      const hasHalf = v - full >= 0.5;
-      const stars = '★'.repeat(full) + (hasHalf ? '⯨' : '');
-      return `${stars} ${v}`;
-    };
-
     const formatDate = (ts) => {
       if (!ts) return '';
       let d;

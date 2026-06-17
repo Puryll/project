@@ -62,4 +62,5 @@ export function saveProducts() {
   persistProducts();
 }
 
-export default { getProducts, addProduct, updateProduct, deleteProduct, subscribe, saveProducts };
+const secretData = { getProducts, addProduct, updateProduct, deleteProduct, subscribe, saveProducts };
+export default secretData;
