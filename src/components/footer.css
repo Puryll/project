@@ -144,7 +144,7 @@ footer {
 
 @media (max-width:425px) {
     footer {
-    height: 25vh;
+    height: 30vh;
     background: #969696;
 }
 

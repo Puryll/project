@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer.jsx";
 import cartStore from "../cart";
-import "./Cart.css"
+import "./Cart.css";
 
 function Cart() {
   const [cart, setCart] = useState([]);
@@ -36,11 +36,18 @@ function Cart() {
                 <h3>{item.name}</h3>
                 <p>{item.price} €</p>
 
+                {/* OUT OF STOCK MESSAGE */}
+                {item.stock <= 0 && (
+                  <p className="out-of-stock">Out of stock</p>
+                )}
+
                 <input
                   className="cart-input"
                   type="number"
                   value={item.qty || 1}
                   min="1"
+                  max={item.stock || 1}
+                  disabled={item.stock <= 0}
                   onChange={(e) =>
                     cartStore.updateQty(item.id, Number(e.target.value))
                   }
