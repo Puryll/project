@@ -1,66 +1,96 @@
+import {
+  collection,
+  addDoc,
+  deleteDoc,
+  updateDoc,
+  doc,
+  onSnapshot,
+  serverTimestamp,
+  query,
+  orderBy
+} from "firebase/firestore";
 
-import initialProducts from "./Product";
+import { db } from "./firebase";
 
-const STORAGE_KEY = "hek-driloni-products";
-
-function loadProducts() {
-  if (typeof window === "undefined") return [...initialProducts];
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  if (!stored) return [...initialProducts];
-  try {
-    const parsed = JSON.parse(stored);
-    return Array.isArray(parsed) ? parsed : [...initialProducts];
-  } catch {
-    return [...initialProducts];
-  }
-}
+const PRODUCTS_COLLECTION = "products";
 
 const state = {
-  products: loadProducts(),
+  products: [],
   listeners: new Set(),
 };
+
+function notify() {
+  state.listeners.forEach((cb) => cb(state.products));
+}
+
+/**
+ * LIVE SYNC from Firestore
+ */
+export function initProductsListener() {
+  const q = query(
+    collection(db, PRODUCTS_COLLECTION),
+    orderBy("createdAt", "desc")
+  );
+
+  return onSnapshot(q, (snapshot) => {
+    state.products = snapshot.docs.map((d) => ({
+      id: d.id,
+      ...d.data(),
+    }));
+
+    notify();
+  });
+}
 
 export function getProducts() {
   return state.products;
 }
 
-export function addProduct(product) {
-  state.products.unshift(product);
-  notify();
-  persistProducts();
+/**
+ * ADD PRODUCT → Firestore
+ */
+export async function addProduct(product) {
+  await addDoc(collection(db, PRODUCTS_COLLECTION), {
+    ...product,
+    createdAt: serverTimestamp(),
+  });
 }
 
-export function deleteProduct(id) {
-  state.products = state.products.filter(p => p.id !== id);
-  notify();
-  persistProducts();
+/**
+ * DELETE PRODUCT → Firestore
+ */
+export async function deleteProduct(id) {
+  await deleteDoc(doc(db, PRODUCTS_COLLECTION, id));
 }
 
-export function updateProduct(id, fields) {
-  state.products = state.products.map(p => p.id === id ? { ...p, ...fields } : p);
-  notify();
-  persistProducts();
+/**
+ * UPDATE PRODUCT → Firestore
+ */
+export async function updateProduct(id, fields) {
+  await updateDoc(doc(db, PRODUCTS_COLLECTION, id), fields);
 }
 
+/**
+ * UI subscriptions (same behavior as before)
+ */
 export function subscribe(cb) {
   state.listeners.add(cb);
   return () => state.listeners.delete(cb);
 }
 
-function notify() {
-  for (const cb of state.listeners) cb(state.products);
-}
+/**
+ * optional (kept for compatibility, does nothing now)
+ */
+export function saveProducts() {}
 
-function persistProducts() {
-  if (typeof window === "undefined") return;
-  try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state.products));
-  } catch {}
-}
+const secretData = {
+  getProducts,
+  addProduct,
+  deleteProduct,
+  updateProduct,
+  subscribe,
+  initProductsListener,
+  saveProducts,
+};
 
-export function saveProducts() {
-  persistProducts();
-}
-
-const secretData = { getProducts, addProduct, updateProduct, deleteProduct, subscribe, saveProducts };
 export default secretData;

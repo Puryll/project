@@ -1,11 +1,36 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import products from "../Product";
-import Footer from "../components/footer.jsx"
+import Footer from "../components/footer.jsx";
+import secretData from "../secretData";
 
 function ViewProduct() {
     const { id } = useParams();
-    const product = products.find((p) => p.id === Number(id));
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const unsub = secretData.subscribe((p) => {
+            setProducts([...p]);
+            setLoading(false);
+        });
+
+        return () => unsub();
+    }, []);
+
+    const product = products.find((p) => String(p.id) === String(id));
+
+    if (loading) {
+        return (
+            <>
+                <Navbar />
+                <main className="product-page">
+                    <h2>Loading...</h2>
+                </main>
+                <Footer />
+            </>
+        );
+    }
 
     if (!product) {
         return (
@@ -14,12 +39,12 @@ function ViewProduct() {
                 <main className="product-page">
                     <section className="product-header">
                         <h1>Produkti nuk u gjet</h1>
-                        <p>Provo një produkt tjetër ose kthehu tek koleksioni ynë.</p>
                         <Link className="buttoni" to="/product">
                             Shiko produktet
                         </Link>
                     </section>
                 </main>
+                <Footer />
             </>
         );
     }
@@ -28,33 +53,34 @@ function ViewProduct() {
         <>
             <Navbar />
             <div className="viewProduct">
-            <main className="product-page">
-                <section className="product-header">
-                    <h1>{product.name}</h1>
-                    <p>Detajet e produktit dhe oferta e veçantë që ju të bëni zgjedhjen më të mirë.</p>
-                </section>
-
-                <section className="viewproduct-card">
-                    <div className="viewproduct-image">
-                        <img src={product.img} alt={product.name} />
-                    </div>
-                    <div className="viewproduct-details">
-                        <span className="badge">Oferta Speciale</span>
-                        <h2>{product.name}</h2>
+                <main className="product-page">
+                    <section className="product-header">
+                        <h1>{product.name}</h1>
                         <p>{product.description}</p>
-                        <div className="viewproduct-footer">
-                            <p className="price">${product.saleprice}</p>
-                            <Link className="buttoni" to="/product">
-                                Kthehu tek produktet
-                            </Link>
+                    </section>
+
+                    <section className="viewproduct-card">
+                        <div className="viewproduct-image">
+                            <img src={product.img} alt={product.name} />
                         </div>
-                    </div>
-                </section>
-            </main>
+
+                        <div className="viewproduct-details">
+                            <h2>{product.name}</h2>
+                            <p>{product.description}</p>
+
+                            <div className="viewproduct-footer">
+                                <p className="price">{product.saleprice} €</p>
+                                <Link className="buttoni" to="/product">
+                                    Kthehu
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
+                </main>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 }
 
-export default ViewProduct;
+export default ViewProduct

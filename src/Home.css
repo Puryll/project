@@ -17,10 +17,40 @@
 }
 
 .home-img {
-    height: 20rem;
-    width: 45rem;
+    height: 30rem;
+    width: 60rem;
     margin-bottom: 4rem;
     border-radius:50px ;
+}
+
+@media (max-width: 1024px) {
+    .home-img {
+    height: 25rem;
+    width: 50rem;
+    margin-bottom: 2rem;
+    border-radius:50px ;
+    margin-top:8rem;
+}
+}
+
+@media (max-width: 425px) {
+    .home-img {
+    height: 15rem;
+    width: 30rem;
+    margin-bottom: 2rem;
+    border-radius:50px ;
+    margin-top:8rem;
+}
+}
+
+@media (max-width: 320px) {
+    .home-img {
+    height: 10rem;
+    width: 20rem;
+    margin-bottom: 2rem;
+    border-radius:50px ;
+    margin-top:8rem;
+}
 }
 
 .home h1 {
