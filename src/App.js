@@ -8,6 +8,7 @@ import Product from './pages/Product';
 import ViewProduct from './pages/ViewProduct';
 import Login from './pages/Login.jsx';
 import Secret from './pages/Secret';
+import Cart from './pages/Cart.jsx'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/productdetails/:id" element={<ViewProduct />} />
       <Route path="/login" element={<Login />} />
       <Route path="/secret" element={<Secret />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
     </>
   );

@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/footer.jsx";
 import secretData from "../secretData";
 import "./Secret.css";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth, db } from "../firebase";
+import { db } from "../firebase";
 import { collection, query, orderBy, onSnapshot, deleteDoc, doc } from "firebase/firestore";
  
 export default function Secret() {
-  const navigate = useNavigate();
-  const [products, setProducts] = useState(secretData.getProducts());
+const [products, setProducts] = useState([]);
+const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [imgLink, setImgLink] = useState("");
@@ -37,15 +35,9 @@ export default function Secret() {
   };
  
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      const fallback = localStorage.getItem("adminAccess") === "true";
-      if (!user && !fallback) {
-        navigate('/login');
-      }
-    });
-    const unsub = secretData.subscribe((p) => setProducts([...p]));
-    return () => { unsub(); unsubscribe(); };
-  }, [navigate]);
+  const unsub = secretData.subscribe(setProducts);
+  return () => unsub();
+}, []);
 
   useEffect(() => {
     const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
@@ -58,22 +50,23 @@ export default function Secret() {
     deleteDoc(doc(db, "comments", commentId));
   }
 
-  function handleAdd(e) {
-    e.preventDefault();
-    const next = {
-      id: Date.now(),
-      name: title || "Produkt i ri",
-      description: "Shtuar nga admin",
-      img: imgLink || "",
-      saleprice: parseFloat(price) || 0,
-      stock: parseInt(stock, 10) || 0,
-    };
-    secretData.addProduct(next);
-    setTitle("");
-    setPrice("");
-    setImgLink("");
-    setStock(1);
-  }
+  async function handleAdd(e) {
+  e.preventDefault();
+
+  await secretData.addProduct({
+    name: title || "Produkt i ri",
+    description: description || "Pa përshkrim",
+    img: imgLink || "",
+    saleprice: parseFloat(price) || 0,
+    stock: parseInt(stock, 10) || 0,
+  });
+
+  setTitle("");
+  setDescription("");
+  setPrice("");
+  setImgLink("");
+  setStock(1);
+}
 
   function handleSaveProducts() {
     secretData.saveProducts();
@@ -89,6 +82,7 @@ export default function Secret() {
 
           <form className="secret-form" onSubmit={handleAdd}>
             <input placeholder="Emri i produktit" value={title} onChange={(e) => setTitle(e.target.value)} />
+            <input placeholder="Përshkrimi i produktit" value={description} onChange={(e) => setDescription(e.target.value)}/>
             <input placeholder="Çmimi" value={price} onChange={(e) => setPrice(e.target.value)} />
             <input placeholder="Link foto (opsionale)" value={imgLink} onChange={(e) => setImgLink(e.target.value)} />
             <input placeholder="Sasia ne stok" value={stock} onChange={(e) => setStock(e.target.value)} />
@@ -100,23 +94,55 @@ export default function Secret() {
             <span className="small muted">Kliko kur të kesh përfunduar ndryshimet e stokut.</span>
           </div>
           <div className="secret-list">
-            {products.map(p => (
-              <div key={p.id} className="secret-item">
-                <div className="secret-item-info">
-                  <strong>{p.name}</strong>
-                  <span>{p.saleprice} €</span>
-                  <div className="small muted">{p.stock !== undefined ? (p.stock > 0 ? `In stock: ${p.stock}` : 'Out of stock') : 'Stock: -'}</div>
-                </div>
-                <div className="secret-item-actions">
-                  <label className="small">
-                    Stok
-                    <input type="number" min="0" value={p.stock || 0} onChange={(e) => secretData.updateProduct(p.id, { stock: Math.max(0, parseInt(e.target.value || 0, 10)) })} />
-                  </label>
-                  <button className="btn" onClick={() => secretData.deleteProduct(p.id)}>Fshi</button>
-                </div>
-              </div>
-            ))}
+  {products.length === 0 ? (
+    <p className="muted">Nuk ka produkte ende...</p>
+  ) : (
+    products.map((p) => (
+      <div key={p.id} className="secret-item">
+        
+        <div className="secret-item-info">
+          <strong>{p.name}</strong>
+          <div className="small muted">{p.description}</div>
+          <span>{p.saleprice} €</span>
+
+          <div className="small muted">
+            {p.stock > 0 ? `In stock: ${p.stock}` : "Out of stock"}
           </div>
+        </div>
+        <div className="secret-item-actions">
+          <label className="small">
+            Stok
+            <input
+              type="number"
+              min="0"
+              value={p.stock ?? 0}
+              onChange={(e) =>
+                secretData.updateProduct(p.id, {
+                  stock: Math.max(0, parseInt(e.target.value || 0, 10)),
+                })
+              }
+            />
+          </label>
+          <button
+            className="btn danger"
+            onClick={async () => {
+              const confirmDelete = window.confirm(
+                "A jeni të sigurt që doni ta fshini këtë produkt?"
+              );
+
+              if (confirmDelete) {
+                await secretData.deleteProduct(p.id);
+              }
+            }}
+          >
+            Fshi
+          </button>
+
+        </div>
+      </div>
+    ))
+  )}
+</div>
 
           <div className="secret-comments">
             <h3>Menaxho Komentet</h3>

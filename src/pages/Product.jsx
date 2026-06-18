@@ -3,6 +3,7 @@ import ProductComponent from "../components/Product";
 import Navbar from "../components/Navbar";
 import secretData from "../secretData";
 import Footer from "../components/footer.jsx";
+import { Link } from "react-router-dom";
 
 function ProductPage() {
   const [products, setProducts] = useState(secretData.getProducts());
@@ -34,6 +35,7 @@ function ProductPage() {
               />
             ))}
           </section>
+          <Link className="buttoni" to="/cart">Go to Cart</Link>
         </main>
       </div>
       <Footer />

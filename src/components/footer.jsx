@@ -11,7 +11,7 @@ function Footer () {
                     <a href="instagram.com" className="a2">instagram</a>
                 </ul>
                 <div className="info-item">
-                    <a href="tel:+355691234567">+383 044 307 925</a><br />
+                    <a href="tel:+355691234567">+383 044 307 925</a>
                     <a href="tel:+355422345678">+383 049 551 704</a>
                 </div>
                 <div className="MadeFrom">

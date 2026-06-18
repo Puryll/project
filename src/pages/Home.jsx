@@ -19,7 +19,9 @@ function Home() {
       return () => unsub();
     }, []);
 
-    const newestProducts = products.slice(-4).reverse();
+const newestProducts = [...products]
+  .sort((a, b) => b.createdAt?.seconds - a.createdAt?.seconds)
+  .slice(0, 4);
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
     const [commentName, setCommentName] = useState("");
