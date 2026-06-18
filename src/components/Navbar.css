@@ -121,7 +121,7 @@
 .nav-links{
   list-style:none;
   display:flex;
-  gap:1rem;
+  gap:5px;
   background:inherit;
   margin-right: 0rem;
 }
