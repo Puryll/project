@@ -6,15 +6,15 @@ function Footer () {
         <>
             <footer>
             <div className="footer">
-                <ul className="FooterUl">
-                    <a href="https://www.facebook.com/driloniad" className="a1">facebook</a>
-                    <a href="instagram.com" className="a2">instagram</a>
-                </ul>
                 <div className="infoitem">
                     <h1 className="info-title">Na kontaktoni mes numrave</h1>
                     <a href="tel:+383044307925">+383 044 307 925</a>
                     <a href="tel:+383049551704">+383 049 551 704</a>
                 </div>
+                <ul className="FooterUl">
+                    <a href="https://www.facebook.com/driloniad" className="a1">facebook</a>
+                    <a href="instagram.com" className="a2">instagram</a>
+                </ul>
                 <div className="MadeFrom">
                     <h1 className="info-show">U krijua nga</h1>
                     <h2>Yll Pllana</h2>
