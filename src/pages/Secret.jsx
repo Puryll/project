@@ -77,7 +77,7 @@ const [description, setDescription] = useState("");
       <Navbar />
       <main className="secret-page">
         <section className="secret-panel">
-          <h2>Dashboard i Sekret</h2>
+          <h2>Dashboard</h2>
           <p className="muted">Shto produkte të reja dhe menaxho listën. Ndryshimet do të reflektohen në faqen kryesore.</p>
 
           <form className="secret-form" onSubmit={handleAdd}>

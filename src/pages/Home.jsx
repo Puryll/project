@@ -9,7 +9,6 @@ import CommentForm from "../components/CommentForm.jsx";
 import CommentList from "../components/CommentList.jsx";
 import { db } from "../firebase";
 import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "firebase/firestore";
-import homeimg from "../assets/home.png"
 
 function Home() {
     const [products, setProducts] = useState(secretData.getProducts());
@@ -97,7 +96,6 @@ const newestProducts = [...products]
             </svg>
           </div>
           <div className="home">
-            <img className="home-img" src={ homeimg } alt="img"></img>
             <h1>Përshëndetje dhe Mirësevini në Dyqanin Tonë</h1>
             <p>Ne sjellim produkte të përzgjedhura me kujdes, me dizajne moderne dhe funksionalitet të qëndrueshëm. Çdo produkt është testuar për t'ju ofruar një përvojë të besueshme.</p>
             <Link to="/Product" className="home-button">Shiko Koleksionin</Link>
