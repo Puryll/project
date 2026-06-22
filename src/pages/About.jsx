@@ -71,27 +71,27 @@ function About() {
                             <div className="work-days">
                                 <div className="day-item">
                                     <span className="day-name">E Hënë</span>
-                                    <span className="day-hours">9:00 - 18:00</span>
+                                    <span className="day-hours">9:00 - 17:00</span>
                                 </div>
                                 <div className="day-item">
                                     <span className="day-name">E Martë</span>
-                                    <span className="day-hours">9:00 - 18:00</span>
+                                    <span className="day-hours">9:00 - 17:00</span>
                                 </div>
                                 <div className="day-item">
                                     <span className="day-name">E Mërkurë</span>
-                                    <span className="day-hours">9:00 - 18:00</span>
+                                    <span className="day-hours">9:00 - 17:00</span>
                                 </div>
                                 <div className="day-item">
                                     <span className="day-name">E Enjte</span>
-                                    <span className="day-hours">9:00 - 18:00</span>
+                                    <span className="day-hours">9:00 - 17:00</span>
                                 </div>
                                 <div className="day-item">
                                     <span className="day-name">E Premte</span>
-                                    <span className="day-hours">9:00 - 18:00</span>
+                                    <span className="day-hours">9:00 - 17:00</span>
                                 </div>
                                 <div className="day-item">
                                     <span className="day-name">E Shtunë</span>
-                                    <span className="day-hours">9:00 - 18:00</span>
+                                    <span className="day-hours">9:00 - 17:00</span>
                                 </div>
                                 <div className="day-item">
                                     <span className="day-name">E Dielë</span>
