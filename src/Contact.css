@@ -6,7 +6,7 @@
 }
 
 .contact-hero {
-  background: #969696;
+  background: #d4d4d4;
   color: #2c2c2c;
   text-align: center;
   padding: 80px 20px 60px;
@@ -119,27 +119,27 @@
 }
 
 .social-btn.facebook  { 
-  background: #1877f2; 
+  background: #2c2c2c; 
 }
 
 .social-btn.whatsapp {
-  background: #25d366;
+  background: #2c2c2c;
 }
 
 .social-btn.whatsapp:hover {
-  background: #1ea952;
+  background: #2c2c2c;
 }
 
 .social-btn.instagram { 
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+  background: #2c2c2c;
 }
 
 .social-btn.twitter   { 
-  background: #1da1f2; 
+  background: #2c2c2c; 
 }
 
 .social-btn.linkedin  { 
-  background: #0077b5; 
+  background: #2c2c2c; 
 }
 
 .contact-form-card {
@@ -204,7 +204,7 @@
 .submit-btn {
   width: 100%;
   padding: 13px;
-  background:#25d366;
+  background:#2c2c2c;
   color: #fff;
   border: none;
   border-radius: 9px;
@@ -217,7 +217,7 @@
 }
 
 .submit-btn:hover {
-  background: #46e07f;
+  background: #525252;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
