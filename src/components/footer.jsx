@@ -12,8 +12,17 @@ function Footer () {
                     <a href="tel:+383049551704">+383 049 551 704</a>
                 </div>
                 <ul className="FooterUl">
-                    <a href="https://www.facebook.com/driloniad" className="a1">facebook</a>
-                    <a href="instagram.com" className="a2">instagram</a>
+                <li>
+                    <a href="https://www.facebook.com/driloniad">
+                        Facebook
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://instagram.com">
+                        Instagram
+                    </a>
+                </li>
                 </ul>
                 <div className="MadeFrom">
                     <h1 className="info-show">U krijua nga</h1>
