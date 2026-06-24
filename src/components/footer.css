@@ -4,162 +4,169 @@
     box-sizing: border-box;
 }
 
+/* =========================
+   FOOTER BASE
+========================= */
+
 footer {
     width: 100%;
-    background: #d4d4d4;
-    padding: 3rem 2rem 1rem;
-    border-top: 2px solid #b5b5b5;
+    background: #0b0b0b;
+    padding: 60px 20px 20px;
+
+    border-top: 1px solid rgba(245, 197, 66, 0.2);
 }
+
+/* =========================
+   FOOTER GRID
+========================= */
 
 .footer {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    align-items: start;
 }
 
+/* =========================
+   LEFT / INFO SECTION
+========================= */
+
 .infoitem {
-    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .info-title {
-    font-size: 1.6rem;
-    color: #222;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #f5c542;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .infoitem a {
     text-decoration: none;
-    color: #555;
-    font-size: 1.1rem;
-    margin-top: 0.8rem;
-    transition: all 0.3s ease;
+    color: #cfcfcf;
+    font-size: 1rem;
+    transition: 0.3s ease;
 }
 
 .infoitem a:hover {
-    color: #111;
-    transform: translateX(5px);
+    color: #f5c542;
+    transform: translateX(6px);
 }
 
+/* =========================
+   CENTER BUTTON LINKS
+========================= */
+
 .FooterUl {
-    flex: 1;
     list-style: none;
     display: flex;
     flex-direction: column;
+    gap: 3rem;
+
     align-items: center;
     justify-content: center;
-    gap: 3rem;
 }
 
 .FooterUl a {
     text-decoration: none;
-    color: white;
-    background: rgb(70, 70, 70);
-    padding: 12px 24px;
-    border-radius: 999px;
+
+    background: #151515;
+    color: #e6e6e6;
+
+    padding: 12px 22px;
+    border-radius: 10px;
+
     font-weight: 600;
     min-width: 180px;
     text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    border: 1px solid rgba(245, 197, 66, 0.15);
+
+    transition: 0.3s ease;
 }
 
 .FooterUl a:hover {
-    background: white;
-    color: rgb(70, 70, 70);
+    background: #f5c542;
+    color: #111;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(245, 197, 66, 0.2);
 }
 
+/* =========================
+   RIGHT SECTION
+========================= */
+
 .MadeFrom {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    gap: 8px;
 }
 
 .info-show {
-    font-size: 1.6rem;
-    color: #222;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #f5c542;
+    font-weight: 700;
 }
 
 .MadeFrom h2,
 .MadeFrom h3,
 .MadeFrom h4 {
-    color: #555;
-    margin-top: 0.4rem;
-    font-weight: 500;
+    color: #bdbdbd;
+    font-weight: 400;
 }
+
+/* =========================
+   COPYRIGHT
+========================= */
 
 .copy {
     max-width: 1200px;
-    margin: 2rem auto 0;
-    padding-top: 1rem;
-    border-top: 2px solid #b5b5b5;
+    margin: 40px auto 0;
+
+    padding-top: 20px;
+    border-top: 1px solid rgba(245, 197, 66, 0.2);
+
     text-align: center;
-    color: #444;
-    font-size: 0.95rem;
+    color: #777;
+    font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
     .footer {
-        gap: 2rem;
-    }
-
-    .info-title,
-    .info-show {
-        font-size: 1.3rem;
-    }
-
-    .FooterUl a {
-        min-width: 150px;
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 425px) {
-    footer {
-        padding: 2rem 1rem 1rem;
-    }
-
-    .footer {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
-    }
-
-    .infoitem {
-        align-items: center;
     }
 
     .MadeFrom {
         align-items: center;
     }
 
-    .info-title,
-    .info-show {
-        font-size: 1.2rem;
-    }
-
-    .infoitem a {
-        font-size: 1rem;
-    }
-
     .FooterUl {
-        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 40px 16px 16px;
     }
 
     .FooterUl a {
-        width: 220px;
-    }
-
-    .copy {
-        font-size: 0.8rem;
+        min-width: 140px;
+        padding: 10px 16px;
     }
 }

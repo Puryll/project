@@ -1,52 +1,57 @@
 .contact-page {
   font-family: 'Segoe UI', sans-serif;
-  color: #222;
-  background: #ffffff;
+  color: #fff;
+  background: #0b0b0b;
   min-height: 100vh;
 }
 
+/* HERO */
 .contact-hero {
-  background: #d4d4d4;
-  color: #2c2c2c;
+  background: #000;
+  color: #ffd000;
   text-align: center;
-  padding: 80px 20px 60px;
+  padding: 90px 20px 60px;
+  border-bottom: 2px solid #ffd000;
 }
 
 .contact-hero h1 {
   font-size: 2.8rem;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   letter-spacing: 1px;
 }
 
 .contact-hero p {
   font-size: 1.1rem;
-  max-width: 560px;
+  max-width: 600px;
   margin: 0 auto;
-  color: #494949;
+  color: #ccc;
   line-height: 1.7;
 }
 
+/* MAIN LAYOUT */
 .contact-main {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 35px;
   max-width: 1100px;
   margin: 60px auto;
   padding: 0 24px;
 }
 
+/* LEFT INFO CARD */
 .contact-info {
   flex: 1 1 300px;
-  background: #ffffff;
+  background: #111;
+  border: 1px solid #222;
   border-radius: 14px;
   padding: 36px 28px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  box-shadow: 0 0 25px rgba(255, 208, 0, 0.05);
 }
 
 .contact-info h2 {
   font-size: 1.5rem;
   margin-bottom: 22px;
-  color: #323233;
+  color: #ffd000;
 }
 
 .info-item {
@@ -57,8 +62,8 @@
 }
 
 .info-icon {
-  font-size: 1.5rem;
-  margin-top: 2px;
+  font-size: 1.4rem;
+  color: #ffd000;
 }
 
 .info-item h4 {
@@ -73,22 +78,23 @@
 .info-item a {
   margin: 0;
   font-size: 0.97rem;
-  color: #333;
+  color: #ddd;
   text-decoration: none;
 }
 
 .info-item a:hover {
-  color: #353536;
+  color: #ffd000;
   text-decoration: underline;
 }
 
+/* SOCIAL */
 .social-section {
   margin-top: 30px;
 }
 
 .social-section h3 {
   font-size: 1rem;
-  color: #000000;
+  color: #ffd000;
   margin-bottom: 14px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -104,58 +110,38 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 9px 18px;
+  padding: 9px 16px;
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  color: #fff;
-  transition: opacity 0.2s, transform 0.2s;
+  color: #0b0b0b;
+  background: #ffd000;
+  transition: all 0.2s ease;
 }
 
 .social-btn:hover {
-  opacity: 0.87;
   transform: translateY(-2px);
+  background: #fff200;
 }
 
-.social-btn.facebook  { 
-  background: #2c2c2c; 
-}
-
-.social-btn.whatsapp {
-  background: #2c2c2c;
-}
-
-.social-btn.whatsapp:hover {
-  background: #2c2c2c;
-}
-
-.social-btn.instagram { 
-  background: #2c2c2c;
-}
-
-.social-btn.twitter   { 
-  background: #2c2c2c; 
-}
-
-.social-btn.linkedin  { 
-  background: #2c2c2c; 
-}
-
+/* FORM CARD */
 .contact-form-card {
   flex: 1 1 360px;
-  background: #fff;
+  background: #111;
+  border: 1px solid #222;
   border-radius: 14px;
   padding: 36px 32px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 0 25px rgba(255, 208, 0, 0.06);
 }
 
 .contact-form-card h2 {
   font-size: 1.5rem;
   margin-bottom: 24px;
-  color: #272727;
+  color: #ffd000;
 }
 
+/* FORM */
 .form-row {
   display: flex;
   gap: 16px;
@@ -172,60 +158,60 @@
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 6px;
-  color: #555;
+  color: #bbb;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
   padding: 11px 14px;
-  border: 1.5px solid #d8dde6;
+  border: 1px solid #333;
   border-radius: 8px;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.2s;
-  background: #fafbfc;
-  color: #222;
-  font-family: inherit;
+  background: #000;
+  color: #fff;
+  transition: all 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-  border-color: #070707;
-  background: #fff;
+  border-color: #ffd000;
+  box-shadow: 0 0 10px rgba(255, 208, 0, 0.15);
 }
 
+/* TEXTAREA */
 .form-group textarea {
   resize: vertical;
   min-height: 120px;
 }
 
+/* BUTTON */
 .submit-btn {
   width: 100%;
   padding: 13px;
-  background:#2c2c2c;
-  color: #fff;
+  background: #ffd000;
+  color: #0b0b0b;
   border: none;
   border-radius: 9px;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  letter-spacing: 0.5px;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 18px rgba(255, 208, 0, 0.15);
 }
 
 .submit-btn:hover {
-  background: #525252;
+  background: #fff200;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* SUCCESS MESSAGE */
 .form-success {
-  background: #e6f7ee;
-  color: #1a7a42;
-  border: 1px solid #a3d9bc;
+  background: rgba(255, 208, 0, 0.1);
+  color: #ffd000;
+  border: 1px solid #ffd000;
   border-radius: 8px;
   padding: 14px 18px;
   text-align: center;
@@ -233,6 +219,7 @@
   margin-top: 16px;
 }
 
+/* MAP */
 .contact-map {
   max-width: 1100px;
   margin: 0 auto 60px;
@@ -241,29 +228,30 @@
 
 .contact-map h2 {
   font-size: 1.5rem;
-  color: #313131;
+  color: #ffd000;
   margin-bottom: 16px;
 }
 
 .contact-map iframe {
   width: 100%;
   height: 380px;
-  border: none;
+  border: 1px solid #222;
   border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0 25px rgba(255, 208, 0, 0.05);
 }
 
+/* RESPONSIVE */
 @media (max-width: 700px) {
-  .contact-hero h1 { 
-    font-size: 2rem; 
+  .contact-hero h1 {
+    font-size: 2rem;
   }
 
-  .form-row { 
+  .form-row {
     flex-direction: column;
-    gap: 0; 
+    gap: 0;
   }
 
-  .contact-main { 
-    gap: 24px; 
+  .contact-main {
+    gap: 24px;
   }
 }

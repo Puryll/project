@@ -1,17 +1,27 @@
 .about-container {
-  background: #d4d4d4;
+  background: radial-gradient(circle at top, #161616, #070707);
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 50px 20px;
   font-family: 'Segoe UI', sans-serif;
+  color: #fff;
 }
+
+/* =======================
+   MAIN CARD WRAPPER
+======================= */
 
 .about-content {
   max-width: 1200px;
   margin: 0 auto;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  border: 1px solid rgba(245, 197, 66, 0.2);
+
+  border-radius: 22px;
   overflow: hidden;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+
   animation: slideUp 0.6s ease-out;
 }
 
@@ -26,64 +36,85 @@
   }
 }
 
+/* =======================
+   HEADER
+======================= */
+
 .about-header {
-  background: #494949;
-  color: white;
-  padding: 60px 30px;
+  background: linear-gradient(135deg, #f5c542, #c99a1a);
+  color: #111;
+  padding: 70px 30px;
   text-align: center;
 }
 
 .about-header h1 {
   font-size: 3em;
   margin: 0;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 1px;
 }
 
 .about-header p {
   font-size: 1.2em;
-  margin: 15px 0 0 0;
-  opacity: 0.95;
-  font-weight: 300;
+  margin-top: 12px;
+  font-weight: 500;
+  opacity: 0.9;
 }
+
+/* =======================
+   GRID SECTIONS
+======================= */
 
 .about-sections {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   padding: 50px 30px;
-  background: #fafbfc;
+
+  background: #0c0c0c;
 }
 
+/* =======================
+   SECTION CARD (NOW YELLOW ACCENT)
+======================= */
+
 .section {
-  background: white;
+  background: linear-gradient(145deg, #1a1a1a, #121212);
+
   padding: 30px;
-  border-radius: 15px;
-  border-left: 5px solid #616161;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border-radius: 16px;
+
+  border: 1px solid rgba(245, 197, 66, 0.15);
+  border-left: 4px solid #f5c542;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+
+  transition: all 0.25s ease;
 }
 
 .section:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
-  border-left-color: #363636;
+  transform: translateY(-6px);
+  border-left-color: #ffd86a;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8),
+              0 0 20px rgba(245, 197, 66, 0.15);
 }
 
 .section h2 {
-  color: #7c7c7c;
-  font-size: 1.6em;
-  margin-top: 0;
-  margin-bottom: 18px;
-  font-weight: 700;
+  color: #f5c542;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-weight: 800;
 }
 
 .section p {
-  color: #666;
+  color: #cfcfcf;
   line-height: 1.7;
-  margin: 8px 0;
   font-size: 0.95em;
 }
+
+/* =======================
+   WORK DAYS
+======================= */
 
 .work-days {
   display: flex;
@@ -94,10 +125,9 @@
 .day-item {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid #e5e7eb;
-  color: #424242;
-  font-size: 0.95em;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ddd;
 }
 
 .day-item:last-child {
@@ -105,51 +135,70 @@
 }
 
 .day-name {
-  font-weight: 600;
-  color: #b8b8b8;
+  font-weight: 700;
+  color: #f5c542;
 }
 
 .day-hours {
-  color: #555;
+  color: #ccc;
   font-weight: 500;
 }
 
+/* =======================
+   STARS
+======================= */
+
 .stars {
-  font-size: 2.2em;
-  color: #fbbf24;
+  font-size: 2.5em;
+  color: #f5c542;
   letter-spacing: 4px;
   margin: 15px 0;
-  display: inline-block;
-  filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
+
+  filter: drop-shadow(0 0 10px rgba(245, 197, 66, 0.4));
 }
 
 .rating-text {
-  color: #666;
+  color: #bbb;
   font-size: 0.95em;
-  margin-top: 10px;
 }
+
+/* =======================
+   BADGE
+======================= */
 
 .shipping-badge {
   display: inline-block;
-  background: #27ae60;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-weight: bold;
+  background: #f5c542;
+  color: #111;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  font-weight: 800;
   margin-top: 10px;
+
+  box-shadow: 0 0 15px rgba(245, 197, 66, 0.2);
 }
 
+/* =======================
+   TEXT STYLES
+======================= */
+
 .year-opened {
-  color: #555;
+  color: #ccc;
   font-size: 1em;
   line-height: 1.8;
 }
 
 .info-text {
-  color: #666;
+  color: #bbb;
   line-height: 1.8;
   font-size: 0.95em;
 }
+
+/* =======================
+   RESPONSIVE
+======================= */
 
 @media (max-width: 768px) {
   .about-header h1 {
@@ -161,7 +210,7 @@
   }
 
   .about-sections {
-    padding: 30px 20px;
+    padding: 30px 18px;
   }
 
   .section {
