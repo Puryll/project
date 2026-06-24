@@ -26,7 +26,7 @@
 .product-header h1 {
   font-size: clamp(2rem, 2.5vw, 3rem);
   margin: 0;
-  color: #dadada;
+  color: #272727;
 }
 
 .product-header p {
