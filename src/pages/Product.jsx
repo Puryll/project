@@ -35,7 +35,7 @@ function ProductPage() {
               />
             ))}
           </section>
-          <Link className="buttoni" to="/cart">Go to Cart</Link>
+          <Link className="c-buttoni" to="/cart">Go to Cart</Link>
         </main>
       </div>
       <Footer />
